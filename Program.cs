@@ -1,19 +1,37 @@
 ﻿using System;
-
-class Program
+using System.Security.AccessControl;
+class Node
 {
-    static void Main()
+    public int Data;
+    public Node Next;
+    public Node(int data)
     {
-        Console.Write("Bir sayı gir: ");
-        int sayi = Convert.ToInt32(Console.ReadLine());
-
-        if (sayi % 2 == 0)
+        Data = data;
+        Next = null;
+    }
+}
+class LinkedList
+{
+    public Node Head;
+    public LinkedList()
+    {
+        Head = null;
+    }
+    public void AddHead(int data)
+    {
+        <Node newNode = new Node(data);
+        < newNode.Next = Head;
+        Head = newNode;
+    }
+    public void Addlist(int data)
+    {
+        Node newNode = new Node(data);
+        if (Head== null)
         {
-            Console.WriteLine($"{sayi} çift bir sayıdır.");
+            Head = newNode;
+            return;
         }
-        else
-        {
-            Console.WriteLine($"{sayi} tek bir sayıdır.");
-        }
+        Node current = Head;
+        while(current.Next !=null)
     }
 }
